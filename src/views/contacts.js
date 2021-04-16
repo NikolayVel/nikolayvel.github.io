@@ -26,5 +26,6 @@ const contactsTemplate = () => html`
 
 export function contactsPage(context) {
     context.render(contactsTemplate());
+    context.setActiveNav('contacts-link')
 }
 

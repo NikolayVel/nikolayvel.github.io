@@ -80,4 +80,5 @@ const educationTemplate = () => html`
 
 export function educationPage(context) {
     context.render(educationTemplate());
+    context.setActiveNav('education-link')
 }

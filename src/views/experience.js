@@ -87,4 +87,5 @@ const experienceTemplate = () => html`
 
 export function experiencePage(context) {
     context.render(experienceTemplate());
+    context.setActiveNav('experience-link')
 }

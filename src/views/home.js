@@ -14,5 +14,6 @@ const homeTemplate = () => html`
 export function homePage(context) {
     
     context.render(homeTemplate())
-    console.log(context)
+    context.setActiveNav('home-link')
+   
 }

@@ -1,6 +1,6 @@
 import {html} from '../lib.js'
 
-const personalityTemplate = () => html`
+const personalityTemplate = (onClick) => html`
 <section id="personality" class="">
     <div class="hero-container">
 
@@ -45,33 +45,33 @@ const personalityTemplate = () => html`
         </div>
         <div class="personality-hobbies">
             <h3>Family & Hobbies...</h3>
-            <div class="hobbies-container">
-                <div class="family">
+            <div @click=${onClick} class="hobbies-container">
+                <div class="family box">
                     <img class="family-photo" src="./img/family-meduim.jpg" alt="my-family">
                     <h4>Family <i class="fas fa-chevron-down"></i></h4>
-                    <p>Live in peace and harmony with my life companion Elena and our extremely sweet and playful, 4
+                    <p class="hidden">Live in peace and harmony with my life companion Elena and our extremely sweet and playful, 4
                         years old daughter Sofia. </p>
                 </div>
-                <div class="mtb">
+                <div class="mtb box">
                     <img class="family-photo" src="./img/family-meduim.jpg" alt="my-family">
                     <h4>Winter <i class="fas fa-chevron-down"></i></h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt laboriosam explicabo aperiam
+                    <p class="hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt laboriosam explicabo aperiam
                         voluptatem vero accusamus similique sint quis expedita iusto, alias inventore voluptate tenetur
                         et reprehenderit vel cum sequi veniam sed maiores amet sapiente quo consequuntur? Sapiente cum
                         ex blanditiis earum, enim aut? Corrupti dolores error facere! Aut, optio illum?</p>
                 </div>
-                <div class="motorcycling">
+                <div class="motorcycling box">
                     <img class="family-photo" src="./img/family-meduim.jpg" alt="my-family">
                     <h4>Summer <i class="fas fa-chevron-down"></i></h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nam sunt excepturi. Exercitationem
+                    <p class="hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nam sunt excepturi. Exercitationem
                         eum itaque fuga animi dolore totam nesciunt voluptate assumenda facere ratione quisquam fugiat
                         quis quod doloribus, dicta corrupti quia? Corrupti fugiat et necessitatibus reprehenderit quas
                         omnis vero veniam. Atque libero harum placeat itaque cupiditate, sunt ad voluptas?</p>
                 </div>
-                <div class="snowboarding">
+                <div class="snowboarding box">
                     <img class="family-photo" src="./img/family-meduim.jpg" alt="my-family">
                     <h4>All year <i class="fas fa-chevron-down"></i></h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quae obcaecati enim autem
+                    <p class="hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quae obcaecati enim autem
                         doloremque eligendi! Quibusdam vitae dicta necessitatibus assumenda quos, adipisci suscipit
                         magnam ea dolore debitis, nostrum perspiciatis sunt.</p>
                 </div>
@@ -84,6 +84,27 @@ const personalityTemplate = () => html`
 </section>`;
 
 export function personalityPage(context) {
-    context.render(personalityTemplate())
-    console.log('personality')
+    context.render(personalityTemplate(onClick))
+    context.setActiveNav('personality-link')
+
+}
+
+function onClick(event) {
+
+    if (event.target.tagName == 'H4') {
+        const icon = event.target.querySelector('.fas')
+        const textBox = event.target.parentNode.querySelector('p')
+        
+        if (icon.classList.contains('fa-chevron-down')){
+            icon.classList.remove('fa-chevron-down')
+            icon.classList.add('fa-chevron-up')
+            textBox.classList.remove('hidden')
+
+        } else {
+            icon.classList.remove('fa-chevron-up')
+            icon.classList.add('fa-chevron-down')
+            textBox.classList.add('hidden')
+        }
+       
+    }
 }
