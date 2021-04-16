@@ -1,6 +1,6 @@
 #personality .hero-container {
     
-    background: var(--light-gray);
+    background: #fff;
     width: calc(100vw - 250px); 
     flex: auto;
     height: 100vh; 
@@ -33,9 +33,6 @@
     font-size: 70px;
     font-weight: bolder;
     opacity: 0.05;
-    
-    
-    
 }
 
 #personality .personality-header h2 {
@@ -52,13 +49,16 @@
     position: relative;
     display: flex;
     padding: 20px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     line-height: 1.5rem;
-    margin-top: 30px;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
 }
 
 #personality .personality-details .details-text {
     width: 60%;
+    min-width: 350px;
     padding: 10px;
 
 }
@@ -69,6 +69,7 @@
 
 #personality .personality-details .details-table {
     width: 40%;
+    min-width: 250px;
     padding: 10px;
 }
 #personality .personality-details .details-table ul{
@@ -88,7 +89,7 @@
 #personality .personality-hobbies{
     max-width: 1100px;
 
-    position: relative;
+    /* position: relative; */
     display: flex;
     padding: 20px;
     flex-wrap: nowrap;
@@ -103,24 +104,38 @@
     width: 100%;
     flex-wrap:wrap;
     flex-grow: 1;
+    align-items: top;
+    justify-content:center;
     /* background: royalblue; */
 
 }
+#personality .personality-hobbies .hobbies-container h4 {
+    width: 50%;
+    cursor: pointer;
+}
+
+/* #personality .personality-hobbies .hobbies-container .family {
+    min-width: 250px;
+    height: 250px;
+} */
+
 
 #personality .personality-hobbies .hobbies-container .mtb {
+    min-width: 250px;
     width: 25%;
-    height: 50px;
+    /* height: 50px; */
     display: flex;
     flex-direction: column;
     
 }
 
 #personality .personality-hobbies .hobbies-container .family {
+    min-width: 250px;
     width: 25%;
     display: flex;
     flex-direction: column;
     
-    height: 50px;
+    /* height: 50px; */
     /* background: green; */
 }
  .family-photo {
@@ -131,16 +146,18 @@
 }
 
 #personality .personality-hobbies .hobbies-container .motorcycling {
+    min-width: 250px;
     width: 25%;
-    height: 50px;
+    
     display: flex;
     flex-direction: column;
     
 }
 
 #personality .personality-hobbies .hobbies-container .snowboarding {
+    min-width: 250px;
     width: 25%;
-    height: 50px;
+    /* height: 50px; */
     display: flex;
     flex-direction: column;
     /* visibility: hidden; */

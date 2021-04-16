@@ -88,6 +88,7 @@
     padding: 10px;
     border: 1px dotted var(--dark-green);
     width: 40%;
+    min-width: 300px;
 }
 
 #experience .experience-timeline .exp-years {
@@ -172,4 +173,10 @@ justify-content: space-between;
     /* border: 0.5px solid var(--dark-gray); */
     border-radius: 0 5px 5px 0;
     position: absolute;
+}
+
+@media (max-width: 450px) {
+    #experience .skills-container .skills-boxes .box {
+        width: 90vw;
+    }
 }
