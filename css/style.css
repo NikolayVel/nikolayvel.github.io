@@ -54,7 +54,7 @@ main {
     visibility: hidden;
     opacity: 0;
     background: #fff;
-    display: none;
+    display: none !important;
 }
 
 /* .align-right {

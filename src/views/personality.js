@@ -13,13 +13,8 @@ const personalityTemplate = (onClick) => html`
                 <h2>I'm <span class="green-text bold">Nikolay Velichkov</span> </h3>
                     <h4>a Project Management professional and Web Development enthusiast
                 </h2>
-                <p>I am experienced Project management professional with positive attitude and strong business acumen
-                    Result driven, proactive and determined towards achieving objectives and delivering results of
-                    highest standard both individually and as a member of a team In the same time have good technical
-                    knowledge in the IT, data distribution and software development I strive for innovation, but when
-                    planning and organizing tasks, I stay focused and logical I am self aware, with high integrity and
-                    good communication skills Adaptable towards change and confident when working under pressure in a
-                    multicultural environment.</p>
+                <p>I am an experienced Project management professional and Web Development enthusiast with a positive attitude and strong business acumen. Result-driven, proactive, and determined towards achieving objectives and delivering results of highest standard both individually and as a member of a team. At the same time have good technical knowledge in IT, data distribution, and software development. I strive for innovation, but when planning and organizing tasks, I stay focused and logical. I am self-aware, with high integrity and good communication skills. Adaptable towards change, confident when working under pressure in a multicultural environment and always striving to learn more and more. 
+</p>
             </div>
 
             <div class="details-table">
@@ -43,37 +38,31 @@ const personalityTemplate = (onClick) => html`
                 </ul>
             </div>
         </div>
-        <div class="personality-hobbies">
+        
+        <div @click=${onClick} class="personality-hobbies">
             <h3>Family & Hobbies...</h3>
-            <div @click=${onClick} class="hobbies-container">
+            
+            <div  class="hobbies-container ">
                 <div class="family box">
-                    <img class="family-photo" src="./img/family-meduim.jpg" alt="my-family">
+                <img class="family-photo" src="./img/family-small.jpg" alt="my-family">
                     <h4>Family <i class="fas fa-chevron-down"></i></h4>
-                    <p class="hidden">Live in peace and harmony with my life companion Elena and our extremely sweet and playful, 4
+                    <p class="hidden">Live in peace and harmony with my life companion Elena and our extremely sweet and playful, almost 4
                         years old daughter Sofia. </p>
                 </div>
-                <div class="mtb box">
-                    <img class="family-photo" src="./img/family-meduim.jpg" alt="my-family">
+                <div class="snowboarding box">
+                    <img class="family-photo" src="./img/winter.jpg" alt="my-family">
                     <h4>Winter <i class="fas fa-chevron-down"></i></h4>
-                    <p class="hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt laboriosam explicabo aperiam
-                        voluptatem vero accusamus similique sint quis expedita iusto, alias inventore voluptate tenetur
-                        et reprehenderit vel cum sequi veniam sed maiores amet sapiente quo consequuntur? Sapiente cum
-                        ex blanditiis earum, enim aut? Corrupti dolores error facere! Aut, optio illum?</p>
+                    <p class="hidden">I really love mountains and enjoy many types of winter sports, no matter if it's snowboarding, skiing, skating, or just hiking in the snow. </p>
                 </div>
                 <div class="motorcycling box">
-                    <img class="family-photo" src="./img/family-meduim.jpg" alt="my-family">
+                    <img class="family-photo" src="./img/bike.jpg" alt="my-family">
                     <h4>Summer <i class="fas fa-chevron-down"></i></h4>
-                    <p class="hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nam sunt excepturi. Exercitationem
-                        eum itaque fuga animi dolore totam nesciunt voluptate assumenda facere ratione quisquam fugiat
-                        quis quod doloribus, dicta corrupti quia? Corrupti fugiat et necessitatibus reprehenderit quas
-                        omnis vero veniam. Atque libero harum placeat itaque cupiditate, sunt ad voluptas?</p>
+                    <p class="hidden">Sunbathing on the beach during hot summer days, no thank you. I use every possibility on weekends to ride my motorcycles, no matter on or off-road.  </p>
                 </div>
-                <div class="snowboarding box">
-                    <img class="family-photo" src="./img/family-meduim.jpg" alt="my-family">
+                <div class="mtb box">
+                    <img class="family-photo" src="./img/cycling.jpg" alt="my-family">
                     <h4>All year <i class="fas fa-chevron-down"></i></h4>
-                    <p class="hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quae obcaecati enim autem
-                        doloremque eligendi! Quibusdam vitae dicta necessitatibus assumenda quos, adipisci suscipit
-                        magnam ea dolore debitis, nostrum perspiciatis sunt.</p>
+                    <p class="hidden">The seasons go round and round but the bicycle is the thing that I enjoy daily also in Denmark, regardless of the weather outside. Mostly MTB in the woods and on the track but also for transportation and family trips. </p>
                 </div>
 
 
@@ -83,17 +72,27 @@ const personalityTemplate = (onClick) => html`
     </div>
 </section>`;
 
+{/* <div class="overflow-pic family "><img src="./img/family-small.jpg" alt="Family picture"> </div>
+            <div class="overflow-pic snowboarding hidden"><img src="./img/winter.jpg" alt="Winter picture"> </div>
+            <div class="overflow-pic motorcycling hidden"><img src="./img/bike.jpg" alt="Summer picture"> </div>
+            <div class="overflow-pic mtb hidden"><img src="./img/cycling.jpg" alt="$1"> </div> */}
+
 export function personalityPage(context) {
     context.render(personalityTemplate(onClick))
     context.setActiveNav('personality-link')
 
 }
 
+let openedOverflow =''
 function onClick(event) {
-
-    if (event.target.tagName == 'H4') {
-        const icon = event.target.querySelector('.fas')
-        const textBox = event.target.parentNode.querySelector('p')
+    
+    if (event.target.tagName == 'H4'|| event.target.tagName == 'I') {
+        let target = event.target;
+        while (target.tagName != 'DIV') {
+            target = target.parentNode
+        }
+        const icon = target.querySelector('.fas')
+        const textBox = target.querySelector('p')
         
         if (icon.classList.contains('fa-chevron-down')){
             icon.classList.remove('fa-chevron-down')
@@ -106,5 +105,21 @@ function onClick(event) {
             textBox.classList.add('hidden')
         }
        
+    } 
+    
+    if (event.target.classList.contains('family-photo') && !openedOverflow){
+        const overflow = event.target.parentNode.querySelector('.overflow-pic')
+        overflow.classList.remove('hidden')
+        openedOverflow = overflow
+    } else if (openedOverflow){
+        openedOverflow.classList.add('hidden')
+        openedOverflow =''
     }
+    // } else if (event.target.parentNode.classList.contains('overflow-pic')) {
+    //     const overflow = event.target.parentNode;
+    //     console.log(overflow)
+    //     overflow.classList.add('hidden')
+    //     openedOverflow =''
+    // }
+
 }

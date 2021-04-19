@@ -108,6 +108,8 @@
 #education .education-timeline ul li div h3 {
     background: var(--dark-green);
     padding: 5px;
+    cursor: pointer;
+    color: #fff;
 }
 
 #education .education-timeline ul li div p {

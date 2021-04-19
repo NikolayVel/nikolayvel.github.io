@@ -175,6 +175,41 @@ justify-content: space-between;
     position: absolute;
 }
 
+#experience .skills-container .skills-boxes .box.js .bar:after{
+    
+    width: 75%;
+   
+}
+
+#experience .skills-container .skills-boxes .box.html .bar:after{
+    
+    width: 75%;
+   
+}
+
+#experience .skills-container .skills-boxes .box.python .bar:after{
+    
+    width: 60%;
+   
+}
+
+#experience .skills-container .skills-boxes .box.excel .bar:after{
+    
+    width: 80%;
+   
+}
+
+#experience .skills-container .skills-boxes .box.photoshop .bar:after{
+    
+    width: 60%;
+   
+}
+
+#experience .skills-container .skills-boxes .box.pbi .bar:after{
+    
+    width: 70%;
+   
+}
 @media (max-width: 450px) {
     #experience .skills-container .skills-boxes .box {
         width: 90vw;
