@@ -29,7 +29,7 @@ const experienceTemplate = () => html`
                     <div class="exp-box">
                         <p class="exp-years">2012 - 2014</p>
                         <p class="exp-title">Entrepreneur and Owner</p>
-                        <p class="exp-company">PowerTools.bg</p>
+                        <p class="exp-company"><a style="color:inherit; text-decoration:none" href="http://www.powertools.bg" target="_blank">PowerTools.bg</a></p>
                         <p class="exp-description">Development and maintenance of online e-commerce platform and databases using Opencart. Business and digital marketing strategy development. Monitor and report on Google Analytics metrics. Highlight potential risks or malfunctions and act proactively to resolve issues. Seek opportunities for improvement and suggest new projects. Coordination across integrated marketing channels. </p>
                     </div>
                     <div class="exp-box">
