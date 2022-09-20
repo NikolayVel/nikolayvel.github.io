@@ -15,7 +15,7 @@ const experienceTemplate = () => html`
                         <p class="exp-years">2017 - </p>
                         <p class="exp-title">Project Manager</p>
                         <p class="exp-company">Data Wise Ltd.</p>
-                        <p class="exp-description">Project manager in the Data Processing and Market Insides department, responsible for Data distribution and analysis. Coordination between clients and company departments. Leading the projects from set up, throughout whole lifecycle to final delivery. Negotiation of budget, timings and scope, allocation of teams and resources. Highlight potential risks or malfunctions and act proactively to resolve issues.
+                        <p class="exp-description">Project manager for System 1 Group and Philips - Drive quality, consistency and accuracy in data provision and allowing the business to make better-informed and more timely decisions. Leading data and analytics projects from set up, throughout whole lifecycle to final delivery. Negotiation of budget, timings and scope, allocation of teams and resources. Setting clear objectives to ensure effective deliverables.
 </p>
                     </div>
 
