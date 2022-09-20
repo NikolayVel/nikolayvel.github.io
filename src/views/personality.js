@@ -30,7 +30,7 @@ const personalityTemplate = (onClick) => html`
                         <p><span class="bold">Tel:</span> +4571458336</p>
                     </li>
                     <li class="details-row">
-                        <p><span class="bold">Age:</span> 36</p>
+                        <p><span class="bold">Age:</span> 38</p>
                     </li>
                     <li class="details-row">
                         <p><span class="bold">Location:</span> Horsens, Denmark</p>
